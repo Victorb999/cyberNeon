@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEON SYNDICATE // DATA &amp; STRUCTURE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .clip-path-polygon {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+        }
+        .clip-path-card {
+            clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
+        }
+        .clip-path-accent {
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+        }
+        body {
+            background-color: #020c1A;
+            color: #dae6fb;
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#375471",
+                        "secondary-dim": "#d4d9a3",
+                        "on-primary-fixed-variant": "#5f001f",
+                        "tertiary": "#cfe5ff",
+                        "error": "#ff716c",
+                        "on-secondary": "#50552b",
+                        "tertiary-fixed-dim": "#abc9ec",
+                        "error-container": "#9f0519",
+                        "primary-container": "#ff738c",
+                        "on-primary": "#630021",
+                        "background": "#040f1d",
+                        "surface-container": "#0b1a2c",
+                        "outline": "#6b7688",
+                        "tertiary-dim": "#abc9ec",
+                        "secondary-fixed": "#e2e7b0",
+                        "primary-fixed": "#ff738c",
+                        "on-tertiary-fixed-variant": "#375572",
+                        "on-tertiary-fixed": "#193854",
+                        "primary-dim": "#e70057",
+                        "surface-dim": "#040f1d",
+                        "primary-fixed-dim": "#ff567a",
+                        "surface-container-high": "#102033",
+                        "on-surface-variant": "#a0acbf",
+                        "inverse-surface": "#f8f9ff",
+                        "on-secondary-container": "#cfd4a0",
+                        "primary": "#ff8b9d",
+                        "surface-tint": "#ff8b9d",
+                        "on-surface": "#dae6fb",
+                        "on-secondary-fixed-variant": "#5a5f34",
+                        "error-dim": "#d7383b",
+                        "surface-container-lowest": "#000000",
+                        "secondary": "#e2e7b0",
+                        "on-error-container": "#ffa8a3",
+                        "on-primary-fixed": "#000000",
+                        "secondary-container": "#454a21",
+                        "surface-container-highest": "#16273b",
+                        "surface-bright": "#1b2d43",
+                        "surface": "#040f1d",
+                        "on-tertiary-container": "#2e4b68",
+                        "surface-container-low": "#061424",
+                        "on-background": "#dae6fb",
+                        "surface-variant": "#16273b",
+                        "on-error": "#490006",
+                        "inverse-primary": "#be0046",
+                        "tertiary-fixed": "#b9d7fa",
+                        "inverse-on-surface": "#4a5667",
+                        "on-secondary-fixed": "#3e421b",
+                        "on-primary-container": "#4d0018",
+                        "outline-variant": "#3d4959",
+                        "secondary-fixed-dim": "#d4d9a3",
+                        "tertiary-container": "#b9d7fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-dim selection:text-on-primary-fixed">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-full w-64 bg-[#000000] border-r-0 py-8 space-y-2 shrink-0">
+<div class="px-6 mb-8">
+<div class="text-lg font-black text-[#ff8b9d] font-headline uppercase tracking-tighter">DS_CORE_V1.0</div>
+<div class="font-headline uppercase tracking-[0.1em] text-[10px] text-secondary opacity-60">KINETIC_EDGE_OS</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors font-headline uppercase tracking-[0.1em] text-xs font-bold hover:translate-x-1 transition-transform duration-200 group" href="#">
+<span class="material-symbols-outlined text-sm">architecture</span>
+<span>FOUNDATIONS</span>
+</a>
+<a class="text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors font-headline uppercase tracking-[0.1em] text-xs font-bold hover:translate-x-1 transition-transform duration-200 group" href="#">
+<span class="material-symbols-outlined text-sm">title</span>
+<span>TYPOGRAPHY</span>
+</a>
+<a class="text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors font-headline uppercase tracking-[0.1em] text-xs font-bold hover:translate-x-1 transition-transform duration-200 group" href="#">
+<span class="material-symbols-outlined text-sm">layers</span>
+<span>SURFACES</span>
+</a>
+<a class="text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors font-headline uppercase tracking-[0.1em] text-xs font-bold hover:translate-x-1 transition-transform duration-200 group" href="#">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span>INTERACTIONS</span>
+</a>
+<!-- Active Tab -->
+<a class="text-[#000000] bg-[#e70057] px-4 py-3 flex items-center gap-3 clip-path-polygon font-headline uppercase tracking-[0.1em] text-xs font-bold" href="#">
+<span class="material-symbols-outlined text-sm">database</span>
+<span>DATA_VIZ</span>
+</a>
+<a class="text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors font-headline uppercase tracking-[0.1em] text-xs font-bold hover:translate-x-1 transition-transform duration-200 group" href="#">
+<span class="material-symbols-outlined text-sm">construction</span>
+<span>UTILITIES</span>
+</a>
+</nav>
+<div class="px-4 mt-auto space-y-4">
+<button class="w-full bg-primary-dim text-on-primary-fixed py-3 font-headline font-black text-xs tracking-widest uppercase active:scale-95 transition-transform clip-path-polygon">
+                    DOWNLOAD_SPEC
+                </button>
+<div class="pt-4 space-y-1">
+<a class="text-[#e2e7b0] opacity-50 px-4 py-1 flex items-center gap-3 hover:opacity-100 transition-opacity font-headline text-[10px] tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined text-xs">list_alt</span>
+<span>SYSTEM_LOG</span>
+</a>
+<a class="text-[#e2e7b0] opacity-50 px-4 py-1 flex items-center gap-3 hover:opacity-100 transition-opacity font-headline text-[10px] tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined text-xs">contact_support</span>
+<span>SUPPORT</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-w-0 overflow-y-auto bg-[#020c1A]">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-6 py-4 max-w-[1920px] mx-auto bg-[#040f1d] shadow-[0px_0px_40px_rgba(255,139,157,0.05)] border-b-0 sticky top-0 z-50">
+<div class="text-2xl font-black text-[#e70057] tracking-tighter uppercase font-headline">NEON SYNDICATE</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-[#e2e7b0] opacity-70 hover:opacity-100 transition-opacity font-headline uppercase tracking-[0.1em] text-sm md:text-md" href="#">COMPONENTS</a>
+<a class="text-[#ff8b9d] border-b-2 border-[#e70057] pb-1 font-headline uppercase tracking-[0.1em] text-sm md:text-md" href="#">SYSTEM</a>
+<a class="text-[#e2e7b0] opacity-70 hover:opacity-100 transition-opacity font-headline uppercase tracking-[0.1em] text-sm md:text-md" href="#">ASSETS</a>
+<a class="text-[#e2e7b0] opacity-70 hover:opacity-100 transition-opacity font-headline uppercase tracking-[0.1em] text-sm md:text-md" href="#">GUIDELINES</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-4 text-[#ff8b9d]">
+<span class="material-symbols-outlined cursor-pointer hover:bg-[#1b2d43] p-2 transition-all duration-200">settings</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-[#1b2d43] p-2 transition-all duration-200">terminal</span>
+</div>
+<button class="bg-[#1b2d43] text-[#ff8b9d] px-6 py-2 font-headline font-bold text-xs tracking-widest uppercase hover:bg-primary-dim hover:text-on-primary-fixed transition-all active:scale-95">
+                        LOGIN
+                    </button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-8 lg:p-12 space-y-12 max-w-[1400px] mx-auto w-full">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-end border-b border-outline-variant/10 pb-12">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="w-12 h-[2px] bg-primary-dim"></span>
+<span class="font-mono text-xs tracking-[0.3em] text-primary">MODULE_04_DATA</span>
+</div>
+<h1 class="text-6xl lg:text-8xl font-black font-headline tracking-tighter text-on-surface leading-[0.85] uppercase">
+                            DATA &amp; <br/><span class="text-primary-dim">STRUCTURE</span>
+</h1>
+</div>
+<div class="max-w-md">
+<p class="text-on-surface-variant font-body text-lg leading-relaxed mb-6">
+                            High-fidelity tactical interface components optimized for real-time monitoring and structural data integrity. Designed with a neon brutalist aesthetic for maximum command visibility.
+                        </p>
+<div class="flex gap-4">
+<div class="bg-surface-container px-4 py-2 border-l-2 border-primary">
+<div class="font-mono text-[10px] text-primary uppercase">SYNC_LATENCY</div>
+<div class="font-headline font-bold text-lg">0.02ms</div>
+</div>
+<div class="bg-surface-container px-4 py-2 border-l-2 border-secondary">
+<div class="font-mono text-[10px] text-secondary uppercase">CORE_LOAD</div>
+<div class="font-headline font-bold text-lg">42.8%</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Information Cards -->
+<section>
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline text-2xl font-black uppercase tracking-widest text-[#e2e7b0]">Information Hub</h2>
+<span class="font-mono text-[10px] text-outline uppercase tracking-[0.2em] border border-outline/20 px-3 py-1">V_01_GRID</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Card 1: Large Feature -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-high relative overflow-hidden clip-path-card group border border-outline-variant/10">
+<div class="absolute top-0 left-0 w-16 h-1 bg-secondary"></div>
+<div class="p-8 flex flex-col h-full">
+<div class="font-mono text-[10px] text-secondary uppercase mb-2 tracking-widest">// SYSTEM_CORE</div>
+<h3 class="text-3xl font-black font-headline uppercase mb-6 text-on-surface">Centralized <br/>Relay Protocol</h3>
+<div class="mt-auto">
+<div class="aspect-video w-full bg-surface-container-lowest overflow-hidden mb-6 group-hover:scale-[1.02] transition-transform duration-500">
+<img alt="abstract digital representation of server infrastructure" class="w-full h-full object-cover opacity-60" data-alt="abstract digital visualization of server motherboard with glowing pink and blue neon data paths and futuristic patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXnBesv_gSTE_4IwmmqO1UzDab83QAEl2TXq1jZbfZ7UCmYw94kQV_5f4a6AAi3-6ju6AJ5iNdcA9JtuNUm1IuQ1aoaXC9BN_wa1Hbu_r_A2_3MEeLOwC2ql8SHsI-vhk5wKuEOBda9us_8iYTkKacWDDmVmnvFq699VBRy1KLM0wUYmkZpchElHStR2FwxJPS8VJeYuRHHhiHK5xg6uQ8oJpQQnGwg6a0AkWQIJDQR0RT5vXnxRsjsGrI8PHXw4WaQ8SJB5VDhAs"/>
+</div>
+<button class="font-mono text-xs uppercase text-primary hover:text-primary-dim transition-colors">// ACCESS_DATA_CHANNELS</button>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-full h-full bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+</div>
+<!-- Card 2: Status -->
+<div class="bg-surface-container-high p-6 clip-path-card border border-outline-variant/10 relative">
+<div class="absolute top-0 left-0 w-8 h-1 bg-primary"></div>
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">terminal</span>
+<h4 class="font-headline font-bold text-lg uppercase mb-2">Command Log</h4>
+<p class="text-sm text-on-surface-variant font-body mb-4">Secure terminal for real-time script execution and kernel manipulation.</p>
+<div class="font-mono text-[10px] text-secondary">ACTIVE_SESSIONS: 04</div>
+</div>
+<!-- Card 3: Metrics -->
+<div class="bg-surface-container-high p-6 clip-path-card border border-outline-variant/10 relative">
+<div class="absolute top-0 left-0 w-8 h-1 bg-primary"></div>
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">radar</span>
+<h4 class="font-headline font-bold text-lg uppercase mb-2">Asset Scan</h4>
+<p class="text-sm text-on-surface-variant font-body mb-4">Deep packet inspection and perimeter security protocols.</p>
+<div class="font-mono text-[10px] text-secondary">THREAT_LEVEL: NULL</div>
+</div>
+<!-- Card 4: Detailed Small -->
+<div class="md:col-span-2 bg-surface-container-high p-6 clip-path-card border border-outline-variant/10 flex gap-6 items-center">
+<div class="h-24 w-24 bg-surface-container-lowest shrink-0 overflow-hidden">
+<img alt="close up of electronic circuits" class="w-full h-full object-cover opacity-40" data-alt="macro close-up of high-performance cooling fans and heat sinks with soft ambient pink neon backlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7BAArDddvXSB2sSsu4HdxNISCqZxzy5ynT2Vtn0LgMOJqpllO_IK_N3qsdyjVGW8BlXiHGM59R4eCM6BDfSXktycijgUZGtQjQbKijToaQ_HHDbE6gYkGGAByY7aVgGWgi4JR7OeGqoA0o5q62rwXAZxdwP1dOhmJtR7d6iz5xI_M63uuUdikR9QU1ailcrdpGNQVEdgpt-mo5Zjr9Q3yn143a9ZyunDMW4A4QUIyXnmLUqpsQD2h66KxWSjJ87SmZw-PcdsMVgg"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg uppercase mb-1">Architecture Overview</h4>
+<p class="text-xs text-on-surface-variant font-body mb-3">Redundant structural layers ensuring 99.9% kinetic stability.</p>
+<div class="flex gap-2">
+<span class="bg-primary/10 text-primary font-mono text-[9px] px-2 py-0.5 uppercase tracking-tighter border border-primary/20">V_1.0.2</span>
+<span class="bg-secondary/10 text-secondary font-mono text-[9px] px-2 py-0.5 uppercase tracking-tighter border border-secondary/20">STABLE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Data Table Section -->
+<section>
+<div class="flex justify-between items-center mb-8 border-b border-outline-variant/20 pb-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#EE005A]">database</span>
+<h2 class="font-headline text-2xl font-black uppercase tracking-widest text-on-surface">Node Registry</h2>
+</div>
+<div class="flex gap-2">
+<div class="bg-surface-container-lowest px-4 py-2 border-b-2 border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-xs text-outline">search</span>
+<input class="bg-transparent border-none p-0 text-[10px] font-mono focus:ring-0 w-32 placeholder:text-outline/50 uppercase" placeholder="FILTER_RECORDS..." type="text"/>
+</div>
+</div>
+</div>
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-separate border-spacing-y-2">
+<thead>
+<tr class="font-mono text-[11px] tracking-widest text-[#EE005A] uppercase bg-surface-container-lowest">
+<th class="px-6 py-4 font-bold border-l-2 border-[#EE005A]">System Status</th>
+<th class="px-6 py-4 font-bold">User ID</th>
+<th class="px-6 py-4 font-bold">Uptime</th>
+<th class="px-6 py-4 font-bold">Cluster</th>
+<th class="px-6 py-4 font-bold text-right">Activity</th>
+</tr>
+</thead>
+<tbody class="font-body text-sm">
+<!-- Row 1 -->
+<tr class="bg-surface-container hover:bg-surface-bright transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 bg-[#ff8b9d] shadow-[0_0_8px_#ff8b9d]"></span>
+<span class="font-headline font-bold uppercase tracking-wider text-[#F9A9BB]">Operational</span>
+</div>
+</td>
+<td class="px-6 py-5 font-mono text-[#F9A9BB]">UID_992_KINETIC</td>
+<td class="px-6 py-5 font-mono opacity-70">342:12:09:55</td>
+<td class="px-6 py-5">
+<span class="bg-surface-container-lowest px-3 py-1 text-[10px] font-mono text-secondary-dim border border-secondary/20">ALPHA_PRIME</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-1 items-end">
+<div class="w-1 bg-[#EE005A] h-2"></div>
+<div class="w-1 bg-[#EE005A] h-4"></div>
+<div class="w-1 bg-[#EE005A] h-3"></div>
+<div class="w-1 bg-[#EE005A] h-6"></div>
+<div class="w-1 bg-[#EE005A] h-5"></div>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container hover:bg-surface-bright transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 bg-error shadow-[0_0_8px_#ff716c]"></span>
+<span class="font-headline font-bold uppercase tracking-wider text-[#F9A9BB]">Maintenance</span>
+</div>
+</td>
+<td class="px-6 py-5 font-mono text-[#F9A9BB]">UID_445_SYND</td>
+<td class="px-6 py-5 font-mono opacity-70">012:04:15:22</td>
+<td class="px-6 py-5">
+<span class="bg-surface-container-lowest px-3 py-1 text-[10px] font-mono text-secondary-dim border border-secondary/20">BETA_RELAY</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-1 items-end opacity-20">
+<div class="w-1 bg-[#EE005A] h-1"></div>
+<div class="w-1 bg-[#EE005A] h-1"></div>
+<div class="w-1 bg-[#EE005A] h-2"></div>
+<div class="w-1 bg-[#EE005A] h-1"></div>
+<div class="w-1 bg-[#EE005A] h-1"></div>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="bg-surface-container hover:bg-surface-bright transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 bg-[#ff8b9d] shadow-[0_0_8px_#ff8b9d]"></span>
+<span class="font-headline font-bold uppercase tracking-wider text-[#F9A9BB]">Synchronized</span>
+</div>
+</td>
+<td class="px-6 py-5 font-mono text-[#F9A9BB]">UID_001_MASTER</td>
+<td class="px-6 py-5 font-mono opacity-70">1,402:00:11:04</td>
+<td class="px-6 py-5">
+<span class="bg-surface-container-lowest px-3 py-1 text-[10px] font-mono text-secondary-dim border border-secondary/20">OMEGA_CORE</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-1 items-end">
+<div class="w-1 bg-[#EE005A] h-6"></div>
+<div class="w-1 bg-[#EE005A] h-5"></div>
+<div class="w-1 bg-[#EE005A] h-6"></div>
+<div class="w-1 bg-[#EE005A] h-7"></div>
+<div class="w-1 bg-[#EE005A] h-6"></div>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container hover:bg-surface-bright transition-colors group">
+<td class="px-6 py-5">
+<div class="flex items-center gap-3">
+<span class="w-2 h-2 bg-secondary shadow-[0_0_8px_#e2e7b0]"></span>
+<span class="font-headline font-bold uppercase tracking-wider text-[#F9A9BB]">Hibernating</span>
+</div>
+</td>
+<td class="px-6 py-5 font-mono text-[#F9A9BB]">UID_129_RESERVE</td>
+<td class="px-6 py-5 font-mono opacity-70">000:00:00:00</td>
+<td class="px-6 py-5">
+<span class="bg-surface-container-lowest px-3 py-1 text-[10px] font-mono text-secondary-dim border border-secondary/20">THETA_VOID</span>
+</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-1 items-end opacity-10">
+<div class="w-1 bg-[#EE005A] h-1"></div>
+<div class="w-1 bg-[#EE005A] h-1"></div>
+<div class="w-1 bg-[#EE005A] h-1"></div>
+<div class="w-1 bg-[#EE005A] h-1"></div>
+<div class="w-1 bg-[#EE005A] h-1"></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Tactical Grid / Visualizer -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 border border-primary/10 relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(#ff8b9d 1px, transparent 1px), linear-gradient(90deg, #ff8b9d 1px, transparent 1px); background-size: 40px 40px;"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-12">
+<div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-widest mb-1 text-primary">Load Distribution</h3>
+<p class="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">REAL_TIME_KINETIC_STREAM</p>
+</div>
+<div class="font-mono text-xs text-secondary-dim bg-secondary/5 px-4 py-1">STABLE_0.44%_FLUCTUATION</div>
+</div>
+<div class="flex items-end justify-between h-48 gap-2">
+<div class="flex-1 bg-surface-container-high h-24 border-t-2 border-primary-dim"></div>
+<div class="flex-1 bg-surface-container-high h-36 border-t-2 border-primary"></div>
+<div class="flex-1 bg-surface-container-high h-20 border-t-2 border-primary-dim"></div>
+<div class="flex-1 bg-surface-container-high h-40 border-t-2 border-secondary"></div>
+<div class="flex-1 bg-surface-container-high h-32 border-t-2 border-primary"></div>
+<div class="flex-1 bg-surface-container-high h-44 border-t-2 border-primary-dim"></div>
+<div class="flex-1 bg-surface-container-high h-28 border-t-2 border-secondary"></div>
+<div class="flex-1 bg-surface-container-high h-38 border-t-2 border-primary"></div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-surface-container p-6 border-l-4 border-[#EE005A]">
+<h4 class="font-headline font-bold text-sm uppercase mb-4 tracking-widest text-primary-fixed">Protocol Status</h4>
+<ul class="space-y-4 font-mono text-[10px] uppercase tracking-widest">
+<li class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+<span>Encrypted_Uplink</span>
+<span class="text-secondary">ACTIVE</span>
+</li>
+<li class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+<span>Auth_Protocol_X</span>
+<span class="text-secondary">BYPASS_OFF</span>
+</li>
+<li class="flex justify-between items-center border-b border-outline-variant/10 pb-2">
+<span>Trace_Detection</span>
+<span class="text-error">WARNING</span>
+</li>
+<li class="flex justify-between items-center">
+<span>Signal_Ghosting</span>
+<span class="text-secondary">ENGAGED</span>
+</li>
+</ul>
+</div>
+<div class="bg-primary/5 p-6 border border-primary/20 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-2 h-2 bg-primary"></div>
+<div class="absolute bottom-0 right-0 w-2 h-2 bg-primary"></div>
+<p class="font-body text-xs leading-relaxed text-primary italic mb-4">"Structure is not merely the container of data, it is the filter through which intelligence becomes action."</p>
+<span class="font-mono text-[9px] uppercase tracking-[0.3em] opacity-60">ADMIN_OVERRIDE_00</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="flex flex-col md:flex-row justify-between items-center px-10 py-6 border-t border-[#ff8b9d]/10 bg-[#040f1d] mt-12 gap-6">
+<div class="flex items-center gap-4">
+<span class="text-[#ff8b9d] font-bold font-headline uppercase text-sm tracking-tighter">NEON SYNDICATE</span>
+<span class="h-4 w-[1px] bg-outline-variant"></span>
+<span class="text-[#e2e7b0]/50 font-mono text-[10px] tracking-widest uppercase">©2024 NEON SYNDICATE // KINETIC EDGE SYSTEM</span>
+</div>
+<div class="flex gap-8">
+<a class="font-mono text-[10px] tracking-widest uppercase text-[#e2e7b0]/50 hover:text-[#ff8b9d] transition-colors hover:underline" href="#">LEGAL</a>
+<a class="font-mono text-[10px] tracking-widest uppercase text-[#e2e7b0]/50 hover:text-[#ff8b9d] transition-colors hover:underline" href="#">PROTOCOL</a>
+<a class="font-mono text-[10px] tracking-widest uppercase text-[#e2e7b0]/50 hover:text-[#ff8b9d] transition-colors hover:underline" href="#">SECURITY</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

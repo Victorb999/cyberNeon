@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEON SYNDICATE // KINETIC EDGE SYSTEM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#cfe5ff",
+                        "primary": "#ff8b9d",
+                        "on-secondary-fixed": "#3e421b",
+                        "on-background": "#dae6fb",
+                        "outline-variant": "#3d4959",
+                        "on-primary-fixed": "#000000",
+                        "surface-container-high": "#102033",
+                        "surface-container-low": "#061424",
+                        "primary-fixed-dim": "#ff567a",
+                        "inverse-on-surface": "#4a5667",
+                        "error-container": "#9f0519",
+                        "tertiary-fixed-dim": "#abc9ec",
+                        "on-primary-container": "#4d0018",
+                        "on-tertiary-container": "#2e4b68",
+                        "secondary-fixed": "#e2e7b0",
+                        "on-tertiary-fixed": "#193854",
+                        "on-surface-variant": "#a0acbf",
+                        "tertiary-container": "#b9d7fa",
+                        "outline": "#6b7688",
+                        "primary-dim": "#e70057",
+                        "surface-bright": "#1b2d43",
+                        "surface": "#040f1d",
+                        "on-secondary": "#50552b",
+                        "on-error": "#490006",
+                        "on-error-container": "#ffa8a3",
+                        "inverse-primary": "#be0046",
+                        "surface-container": "#0b1a2c",
+                        "on-surface": "#dae6fb",
+                        "surface-container-highest": "#16273b",
+                        "surface-dim": "#040f1d",
+                        "on-secondary-fixed-variant": "#5a5f34",
+                        "secondary-container": "#454a21",
+                        "tertiary-fixed": "#b9d7fa",
+                        "surface-variant": "#16273b",
+                        "primary-container": "#ff738c",
+                        "error": "#ff716c",
+                        "surface-container-lowest": "#000000",
+                        "error-dim": "#d7383b",
+                        "secondary-dim": "#d4d9a3",
+                        "surface-tint": "#ff8b9d",
+                        "background": "#040f1d",
+                        "primary-fixed": "#ff738c",
+                        "on-secondary-container": "#cfd4a0",
+                        "on-primary": "#630021",
+                        "on-primary-fixed-variant": "#5f001f",
+                        "on-tertiary": "#375471",
+                        "secondary": "#e2e7b0",
+                        "tertiary-dim": "#abc9ec",
+                        "inverse-surface": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#375572",
+                        "secondary-fixed-dim": "#d4d9a3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0rem",
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .clip-path-polygon-active {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+        }
+        .clip-path-card {
+            clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
+        }
+        .clip-path-button {
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #ff8b9d; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#040f1d] shadow-[0px_0px_40px_rgba(255,139,157,0.05)] border-b-0">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1920px] mx-auto">
+<div class="text-2xl font-black text-[#e70057] tracking-tighter uppercase font-headline">
+                NEON SYNDICATE
+            </div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-sm md:text-md text-[#ff8b9d] border-b-2 border-[#e70057] pb-1" href="#">COMPONENTS</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-sm md:text-md text-[#e2e7b0] opacity-70 hover:opacity-100 transition-opacity" href="#">SYSTEM</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-sm md:text-md text-[#e2e7b0] opacity-70 hover:opacity-100 transition-opacity" href="#">ASSETS</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-sm md:text-md text-[#e2e7b0] opacity-70 hover:opacity-100 transition-opacity" href="#">GUIDELINES</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-[#1b2d43] px-3 py-1.5 gap-2">
+<span class="material-symbols-outlined text-sm opacity-50">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs font-headline tracking-widest uppercase placeholder:text-outline" placeholder="SEARCH_CORE..." type="text"/>
+</div>
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-[#e2e7b0] hover:text-[#ff8b9d] cursor-pointer transition-colors">settings</span>
+<span class="material-symbols-outlined text-[#e2e7b0] hover:text-[#ff8b9d] cursor-pointer transition-colors">terminal</span>
+<button class="bg-primary-dim text-on-primary-fixed px-6 py-2 font-headline font-bold text-xs tracking-widest transition-transform scale-95 active:scale-90">LOGIN</button>
+</div>
+</div>
+</div>
+</header>
+<div class="flex pt-20 h-screen overflow-hidden">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-full w-64 bg-[#000000] py-8 space-y-2 shrink-0">
+<div class="px-6 mb-8">
+<div class="text-lg font-black text-[#ff8b9d] font-headline uppercase">DS_CORE_V1.0</div>
+<div class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-[10px] font-bold text-outline opacity-60">KINETIC_EDGE_OS</div>
+</div>
+<nav class="flex-1 space-y-1 overflow-y-auto px-2">
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-xs font-bold text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">architecture</span> FOUNDATIONS
+                </a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-xs font-bold text-[#000000] bg-[#e70057] px-4 py-3 flex items-center gap-3 clip-path-polygon-active" href="#">
+<span class="material-symbols-outlined">title</span> TYPOGRAPHY
+                </a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-xs font-bold text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">layers</span> SURFACES
+                </a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-xs font-bold text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">bolt</span> INTERACTIONS
+                </a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-xs font-bold text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">database</span> DATA_VIZ
+                </a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.1em] text-xs font-bold text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary">construction</span> UTILITIES
+                </a>
+</nav>
+<div class="px-4 mt-auto space-y-4">
+<button class="w-full bg-[#1b2d43] text-primary py-3 font-headline text-[10px] font-black tracking-widest border border-primary/20 hover:border-primary/60 transition-all">
+                    DOWNLOAD_SPEC
+                </button>
+<div class="border-t border-outline/10 pt-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-[10px] font-headline text-outline hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">list_alt</span> SYSTEM_LOG
+                    </a>
+<a class="flex items-center gap-3 px-4 py-2 text-[10px] font-headline text-outline hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">contact_support</span> SUPPORT
+                    </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto bg-surface p-6 md:p-12">
+<div class="max-w-6xl mx-auto space-y-24">
+<!-- Section 1: Typography -->
+<section>
+<div class="flex items-baseline gap-4 mb-10 border-l-4 border-primary pl-6">
+<h2 class="text-4xl font-black font-headline tracking-tighter uppercase">01. Typography</h2>
+<span class="text-secondary font-headline text-xs tracking-widest opacity-50">// VOX_SHEET</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="space-y-8">
+<div>
+<p class="text-[10px] font-headline text-primary mb-2 tracking-[0.3em]">DISPLAY_LARGE</p>
+<h1 class="text-6xl font-black font-headline tracking-tighter uppercase leading-none">NEON_GENESIS</h1>
+</div>
+<div>
+<p class="text-[10px] font-headline text-primary mb-2 tracking-[0.3em]">HEADLINE_MEDIUM</p>
+<h2 class="text-3xl font-bold font-headline tracking-tight uppercase">Tactical. High-End. Brutalist.</h2>
+</div>
+<div>
+<p class="text-[10px] font-headline text-primary mb-2 tracking-[0.3em]">LABEL_TEXT</p>
+<p class="font-headline text-secondary tracking-widest uppercase text-sm">KINETIC_EDGE_INTERACTION_PROTOCOL_A1</p>
+</div>
+</div>
+<div class="p-8 bg-surface-container-low relative group">
+<div class="absolute top-0 left-0 w-2 h-0.5 bg-secondary"></div>
+<p class="text-[10px] font-headline text-primary mb-4 tracking-[0.3em]">BODY_TEXT</p>
+<p class="text-on-surface-variant leading-relaxed text-lg font-light">
+                                The kinetic design system is engineered to break the monotony of the "safe" modern web. We are not building a generic dashboard; we are crafting a high-fidelity tactical interface. The aesthetic moves beyond simple Cyberpunk tropes into "High-End Technical Editorial"—combining the raw energy of tech-culture with precision.
+                            </p>
+</div>
+</div>
+</section>
+<!-- Section 2: Buttons -->
+<section>
+<div class="flex items-baseline gap-4 mb-10 border-l-4 border-secondary pl-6">
+<h2 class="text-4xl font-black font-headline tracking-tighter uppercase">02. Tactical Actuators</h2>
+<span class="text-secondary font-headline text-xs tracking-widest opacity-50">// INTERACTION_NODES</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="space-y-4">
+<p class="text-[10px] font-headline text-primary tracking-widest uppercase">PRIMARY_GLOW</p>
+<button class="w-full bg-primary-dim text-on-primary-fixed px-8 py-4 font-headline font-black text-sm tracking-widest transition-all hover:shadow-[0_0_20px_rgba(231,0,87,0.4)] active:scale-95">
+                                INITIALIZE_CORE
+                            </button>
+</div>
+<div class="space-y-4">
+<p class="text-[10px] font-headline text-secondary tracking-widest uppercase">SECONDARY_WELL</p>
+<button class="w-full bg-secondary text-on-secondary-fixed px-8 py-4 font-headline font-black text-sm tracking-widest transition-all hover:bg-white active:scale-95">
+                                BYPASS_ENCRYPTION
+                            </button>
+</div>
+<div class="space-y-4">
+<p class="text-[10px] font-headline text-outline tracking-widest uppercase">GHOST_GHOST</p>
+<button class="w-full bg-transparent border border-primary/30 text-primary px-8 py-4 font-headline font-black text-sm tracking-widest transition-all hover:border-primary hover:bg-primary/5 active:scale-95">
+                                TERMINATE_TASK
+                            </button>
+</div>
+<div class="space-y-4">
+<p class="text-[10px] font-headline text-outline tracking-widest uppercase">TERTIARY_SLASH</p>
+<button class="w-full text-secondary px-8 py-4 font-headline font-bold text-xs tracking-widest hover:text-white transition-colors flex items-center justify-center gap-2">
+<span class="opacity-40">//</span> VIEW_METRICS
+                            </button>
+</div>
+</div>
+</section>
+<!-- Section 3: Form Elements (Bento Grid Style) -->
+<section>
+<div class="flex items-baseline gap-4 mb-10 border-l-4 border-outline pl-6">
+<h2 class="text-4xl font-black font-headline tracking-tighter uppercase">03. Data Ports</h2>
+<span class="text-secondary font-headline text-xs tracking-widest opacity-50">// INPUT_STREAM</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container p-8 space-y-6">
+<div class="space-y-2">
+<label class="text-[10px] font-headline text-outline tracking-[0.2em] uppercase">NEURAL_ID_ADDRESS</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant py-4 px-4 font-headline text-on-surface focus:ring-0 focus:border-primary transition-all placeholder:opacity-20" placeholder="X-774-SYNDICATE-001" type="text"/>
+<div class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary group-focus-within:w-full transition-all duration-500"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-[10px] font-headline text-outline tracking-[0.2em] uppercase">ACCESS_LEVEL</label>
+<select class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant py-4 px-4 font-headline text-on-surface focus:ring-0 focus:border-secondary transition-all appearance-none cursor-pointer">
+<option>LEVEL_01_RECRUIT</option>
+<option>LEVEL_05_OPERATOR</option>
+<option>LEVEL_09_SYNDICATE</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-[10px] font-headline text-outline tracking-[0.2em] uppercase">ENCRYPTION_SALT</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant py-4 px-4 font-headline text-on-surface focus:ring-0 focus:border-primary transition-all" type="password" value="********"/>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high p-8 flex flex-col justify-between">
+<div class="space-y-8">
+<div class="flex items-center justify-between group cursor-pointer">
+<span class="text-xs font-headline font-bold tracking-widest text-secondary uppercase">UPLINK_STATUS</span>
+<div class="w-12 h-6 bg-surface-container-lowest relative flex items-center px-1">
+<div class="w-4 h-4 bg-primary shadow-[0_0_8px_#ff8b9d]"></div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-5 h-5 bg-surface-container-lowest flex items-center justify-center cursor-pointer border border-outline/30">
+<div class="w-3 h-3 bg-secondary"></div>
+</div>
+<span class="text-xs font-headline font-bold tracking-widest text-on-surface-variant uppercase">ENABLE_GLITCH_FILTER</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-5 h-5 border-2 border-primary-dim rounded-full flex items-center justify-center cursor-pointer">
+<div class="w-2 h-2 bg-primary-dim rounded-full"></div>
+</div>
+<span class="text-xs font-headline font-bold tracking-widest text-on-surface uppercase">STRICT_PROTOCOL</span>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline/10">
+<p class="text-[9px] font-headline text-outline leading-tight">HARDWARE_INPUT_RECOGNIZED_BY_KERNEL_3.9.1</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Cards -->
+<section>
+<div class="flex items-baseline gap-4 mb-10 border-l-4 border-primary-dim pl-6">
+<h2 class="text-4xl font-black font-headline tracking-tighter uppercase">04. Modular Units</h2>
+<span class="text-secondary font-headline text-xs tracking-widest opacity-50">// DATA_CONTAINERS</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Glassmorphism Card -->
+<div class="relative group">
+<div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-transparent opacity-10 group-hover:opacity-30 transition-opacity"></div>
+<div class="relative bg-surface-bright/40 backdrop-blur-xl p-8 clip-path-card border-l-2 border-t-2 border-primary/20">
+<div class="flex justify-between mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+<div class="text-[10px] font-headline bg-primary/10 text-primary px-2 py-1 uppercase tracking-widest">ACTIVE</div>
+</div>
+<h3 class="text-xl font-headline font-black mb-2 uppercase tracking-tight">KINETIC_DRIVE</h3>
+<p class="text-sm text-on-surface-variant mb-6">Real-time throughput monitoring for secondary neural relays.</p>
+<div class="flex items-center justify-between border-t border-outline/10 pt-4">
+<span class="text-[10px] font-headline text-secondary tracking-widest uppercase">774_GPPS</span>
+<span class="material-symbols-outlined text-sm text-outline">trending_up</span>
+</div>
+</div>
+</div>
+<!-- Technical Plate -->
+<div class="bg-surface-container-high p-8 border-t-4 border-secondary flex flex-col justify-between">
+<div>
+<h3 class="text-xl font-headline font-black mb-4 uppercase tracking-tight">ENCRYPTION_NODE_A</h3>
+<div class="space-y-3">
+<div class="h-2 bg-surface-container-lowest w-full relative">
+<div class="absolute h-full bg-secondary w-2/3"></div>
+</div>
+<div class="flex justify-between text-[10px] font-headline text-outline tracking-widest uppercase">
+<span>SYSTEM_LOAD</span>
+<span>66%</span>
+</div>
+</div>
+</div>
+<button class="mt-8 text-secondary font-headline text-xs font-black tracking-[0.2em] uppercase hover:underline text-left">// ACCESS_LOGS</button>
+</div>
+<!-- Image Visual Card -->
+<div class="relative overflow-hidden group">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 opacity-40" data-alt="Abstract futuristic neon patterns in magenta and dark blue with high contrast and geometric shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY7fQXNjqm1XhKrPtMCCdmMuwrJ-DNR-horEEmGS4XCSMUi9n_zChxmT84qpfM1d5KuMrtTIsoXaMwWCBNVMoTAeeDrVAldNAz0WId3oKzB8qDc9FLgitiYRmPnsZqnbq9gMmKXfiVIrstpMGmDOb3q5eyy3kWSeEL2MQH_HBsZ9HPggvnrDkkRF_Xe4m5O-_uRfN5CXkOALWUNp1IkEkOzPq9Fmaiv0l-tZ5fCs8PHtbDpgJmmaSh4zl_O7mIoVQQo6VXm3t_NrY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<h3 class="text-xl font-headline font-black mb-2 uppercase tracking-tight">SYNDICATE_ASSET_4</h3>
+<p class="text-xs font-headline text-primary tracking-widest uppercase">GEO_LOCATION: [HIDDEN]</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Data Table -->
+<section>
+<div class="flex items-baseline gap-4 mb-10 border-l-4 border-secondary pl-6">
+<h2 class="text-4xl font-black font-headline tracking-tighter uppercase">05. Technical Readouts</h2>
+<span class="text-secondary font-headline text-xs tracking-widest opacity-50">// DATA_LOGS</span>
+</div>
+<div class="bg-surface-container-low overflow-hidden">
+<table class="w-full text-left font-headline">
+<thead>
+<tr class="bg-surface-container-highest">
+<th class="px-6 py-4 text-[10px] tracking-[0.2em] text-outline uppercase">TRANSACTION_HASH</th>
+<th class="px-6 py-4 text-[10px] tracking-[0.2em] text-outline uppercase">ENTITY_SOURCE</th>
+<th class="px-6 py-4 text-[10px] tracking-[0.2em] text-outline uppercase">STATUS_BIT</th>
+<th class="px-6 py-4 text-[10px] tracking-[0.2em] text-outline uppercase text-right">MAGNITUDE</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline/5">
+<tr class="hover:bg-surface-bright/20 transition-colors">
+<td class="px-6 py-4 text-xs font-bold text-primary tracking-widest">0X8847...FB82</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">CENTRAL_COMMAND</td>
+<td class="px-6 py-4">
+<span class="bg-[#22c55e]/10 text-[#22c55e] px-2 py-0.5 text-[10px] font-black uppercase tracking-widest border border-[#22c55e]/30">SUCCESS</span>
+</td>
+<td class="px-6 py-4 text-right text-xs font-bold text-on-surface">1,244.00_CR</td>
+</tr>
+<tr class="hover:bg-surface-bright/20 transition-colors">
+<td class="px-6 py-4 text-xs font-bold text-primary tracking-widest">0XC119...3E90</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">NODE_DELTA_9</td>
+<td class="px-6 py-4">
+<span class="bg-[#FB1616]/10 text-[#FB1616] px-2 py-0.5 text-[10px] font-black uppercase tracking-widest border border-[#FB1616]/30">ERROR</span>
+</td>
+<td class="px-6 py-4 text-right text-xs font-bold text-on-surface">0,000.00_CR</td>
+</tr>
+<tr class="hover:bg-surface-bright/20 transition-colors">
+<td class="px-6 py-4 text-xs font-bold text-primary tracking-widest">0XFF02...9A11</td>
+<td class="px-6 py-4 text-sm text-on-surface-variant">UNKNOWN_USER</td>
+<td class="px-6 py-4">
+<span class="bg-secondary/10 text-secondary px-2 py-0.5 text-[10px] font-black uppercase tracking-widest border border-secondary/30">PENDING</span>
+</td>
+<td class="px-6 py-4 text-right text-xs font-bold text-on-surface">9,421.12_CR</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Section 6: Feedback & Indicators -->
+<section class="pb-24">
+<div class="flex items-baseline gap-4 mb-10 border-l-4 border-outline-variant pl-6">
+<h2 class="text-4xl font-black font-headline tracking-tighter uppercase">06. Feedback Nodes</h2>
+<span class="text-secondary font-headline text-xs tracking-widest opacity-50">// SIGNAL_INDICATORS</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-8">
+<p class="text-[10px] font-headline text-outline tracking-widest uppercase mb-4">STATUS_TAGS</p>
+<div class="flex flex-wrap gap-4">
+<span class="bg-tertiary-container/20 text-tertiary-dim px-3 py-1 font-headline text-[10px] font-bold uppercase tracking-widest border-r-2 border-tertiary-dim">STABLE</span>
+<span class="bg-error-container/20 text-error px-3 py-1 font-headline text-[10px] font-bold uppercase tracking-widest border-r-2 border-error">CRITICAL</span>
+<span class="bg-secondary-container/20 text-secondary px-3 py-1 font-headline text-[10px] font-bold uppercase tracking-widest border-r-2 border-secondary">OPTIMIZED</span>
+<span class="bg-primary-container/20 text-primary px-3 py-1 font-headline text-[10px] font-bold uppercase tracking-widest border-r-2 border-primary">REACTIVE</span>
+</div>
+<div class="pt-8">
+<p class="text-[10px] font-headline text-outline tracking-widest uppercase mb-4">TOOLTIP_OVERLAY</p>
+<div class="relative inline-block p-4 bg-surface-bright border border-primary/40">
+<div class="absolute -top-3 left-6 px-2 bg-surface text-primary font-headline text-[8px] font-black uppercase tracking-[0.3em]">SYSTEM_TIP</div>
+<p class="text-xs font-headline tracking-tight leading-relaxed">PROTOCOL_88 REQUIRES ELEVATED NEURAL PRIVILEGES TO EXECUTE PRIMARY PAYLOADS.</p>
+<div class="absolute -bottom-2 -right-2 w-4 h-4 bg-primary/20"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-8 space-y-6">
+<p class="text-[10px] font-headline text-outline tracking-widest uppercase">INDICATOR_VARIANTS</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-3 h-3 bg-primary animate-pulse"></div>
+<span class="text-xs font-headline font-bold uppercase tracking-widest">LIVE_CONNECTION_DETECTED</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-3 h-3 bg-secondary"></div>
+<span class="text-xs font-headline font-bold uppercase tracking-widest">ENCRYPTION_BYPASS_IDLE</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-3 h-3 bg-outline opacity-30"></div>
+<span class="text-xs font-headline font-bold uppercase tracking-widest opacity-30">OFFLINE_NODES</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="fixed bottom-0 left-0 right-0 z-50 bg-[#040f1d] border-t border-[#ff8b9d]/10">
+<div class="flex justify-between items-center px-10 py-6">
+<div class="font-mono text-[10px] tracking-widest uppercase text-[#e2e7b0]/50">
+                ©2024 <span class="text-[#ff8b9d] font-bold">NEON SYNDICATE</span> // KINETIC EDGE SYSTEM
+            </div>
+<div class="flex gap-8">
+<a class="font-mono text-[10px] tracking-widest uppercase text-[#e2e7b0]/50 hover:text-[#ff8b9d] transition-colors hover:underline" href="#">LEGAL</a>
+<a class="font-mono text-[10px] tracking-widest uppercase text-[#e2e7b0]/50 hover:text-[#ff8b9d] transition-colors hover:underline" href="#">PROTOCOL</a>
+<a class="font-mono text-[10px] tracking-widest uppercase text-[#e2e7b0]/50 hover:text-[#ff8b9d] transition-colors hover:underline" href="#">SECURITY</a>
+</div>
+</div>
+</footer>
+</body></html>

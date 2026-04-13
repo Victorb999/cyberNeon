@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #040f1d;
+  --color-surface: #040f1d;
+  --color-surface-dim: #040f1d;
+  --color-surface-bright: #1b2d43;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: #061424;
+  --color-surface-container: #0b1a2c;
+  --color-surface-container-high: #102033;
+  --color-surface-container-highest: #16273b;
+
+  --color-on-surface: #dae6fb;
+  --color-on-surface-variant: #a0acbf;
+  --color-outline: #6b7688;
+  --color-outline-variant: #3d4959;
+
+  --color-primary: #ff8b9d;
+  --color-on-primary: #630021;
+  --color-primary-dim: #e70057;
+  --color-on-primary-fixed: #000000;
+
+  --color-secondary: #e2e7b0;
+  --color-secondary-dim: #d4d9a3;
+
+  --color-error: #ff716c;
+
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Space Grotesk", sans-serif;
+
+  --radius-none: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 0px;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+    font-family: var(--font-body);
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+@layer utilities {
+  .clip-path-polygon {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
+  }
+
+  .clip-path-card {
+    clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
+  }
+
+  .clip-path-button {
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+  }
+
+  .inner-glow {
+    box-shadow: inset 1px 1px 0px rgba(255, 139, 157, 0.3);
+  }
+}

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEON SYNDICATE // FORM CONTROLS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#375471",
+                    "secondary-dim": "#d4d9a3",
+                    "on-primary-fixed-variant": "#5f001f",
+                    "tertiary": "#cfe5ff",
+                    "error": "#ff716c",
+                    "on-secondary": "#50552b",
+                    "tertiary-fixed-dim": "#abc9ec",
+                    "error-container": "#9f0519",
+                    "primary-container": "#ff738c",
+                    "on-primary": "#630021",
+                    "background": "#040f1d",
+                    "surface-container": "#0b1a2c",
+                    "outline": "#6b7688",
+                    "tertiary-dim": "#abc9ec",
+                    "secondary-fixed": "#e2e7b0",
+                    "primary-fixed": "#ff738c",
+                    "on-tertiary-fixed-variant": "#375572",
+                    "on-tertiary-fixed": "#193854",
+                    "primary-dim": "#e70057",
+                    "surface-dim": "#040f1d",
+                    "primary-fixed-dim": "#ff567a",
+                    "surface-container-high": "#102033",
+                    "on-surface-variant": "#a0acbf",
+                    "inverse-surface": "#f8f9ff",
+                    "on-secondary-container": "#cfd4a0",
+                    "primary": "#ff8b9d",
+                    "surface-tint": "#ff8b9d",
+                    "on-surface": "#dae6fb",
+                    "on-secondary-fixed-variant": "#5a5f34",
+                    "error-dim": "#d7383b",
+                    "surface-container-lowest": "#000000",
+                    "secondary": "#e2e7b0",
+                    "on-error-container": "#ffa8a3",
+                    "on-primary-fixed": "#000000",
+                    "secondary-container": "#454a21",
+                    "surface-container-highest": "#16273b",
+                    "surface-bright": "#1b2d43",
+                    "surface": "#040f1d",
+                    "on-tertiary-container": "#2e4b68",
+                    "surface-container-low": "#061424",
+                    "on-background": "#dae6fb",
+                    "surface-variant": "#16273b",
+                    "on-error": "#490006",
+                    "inverse-primary": "#be0046",
+                    "tertiary-fixed": "#b9d7fa",
+                    "inverse-on-surface": "#4a5667",
+                    "on-secondary-fixed": "#3e421b",
+                    "on-primary-container": "#4d0018",
+                    "outline-variant": "#3d4959",
+                    "secondary-fixed-dim": "#d4d9a3",
+                    "tertiary-container": "#b9d7fa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #040f1d; }
+        .clip-path-polygon { clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%); }
+        .glow-primary:hover { text-shadow: 0 0 8px #ff8b9d; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #e70057; }
+    </style>
+</head>
+<body class="font-body text-on-surface min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-64 bg-[#000000] border-r-0 fixed left-0 top-0 z-50">
+<div class="px-6 py-8">
+<h1 class="text-lg font-black text-[#ff8b9d] font-headline uppercase tracking-tight">DS_CORE_V1.0</h1>
+<p class="font-headline uppercase tracking-[0.1em] text-[10px] text-secondary opacity-60">KINETIC_EDGE_OS</p>
+</div>
+<nav class="flex flex-col flex-1 space-y-2 mt-4">
+<a class="text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors font-headline uppercase tracking-[0.1em] text-xs font-bold" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="architecture">architecture</span> FOUNDATIONS
+            </a>
+<a class="text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors font-headline uppercase tracking-[0.1em] text-xs font-bold" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="title">title</span> TYPOGRAPHY
+            </a>
+<!-- ACTIVE TAB: SURFACES -->
+<a class="text-[#000000] bg-[#e70057] px-4 py-3 flex items-center gap-3 clip-path-polygon font-headline uppercase tracking-[0.1em] text-xs font-bold" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="layers">layers</span> SURFACES
+            </a>
+<a class="text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors font-headline uppercase tracking-[0.1em] text-xs font-bold" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="bolt">bolt</span> INTERACTIONS
+            </a>
+<a class="text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors font-headline uppercase tracking-[0.1em] text-xs font-bold" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="database">database</span> DATA_VIZ
+            </a>
+<a class="text-[#e2e7b0] px-4 py-3 flex items-center gap-3 hover:bg-[#1b2d43] transition-colors font-headline uppercase tracking-[0.1em] text-xs font-bold" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="construction">construction</span> UTILITIES
+            </a>
+</nav>
+<div class="p-6 mt-auto border-t border-[#ff8b9d]/10">
+<button class="w-full bg-[#e70057] text-[#000000] font-headline font-black py-3 uppercase tracking-widest text-[10px] active:scale-95 transition-transform">
+                DOWNLOAD_SPEC
+            </button>
+<div class="mt-6 flex flex-col gap-3">
+<a class="flex items-center gap-2 text-secondary/50 hover:text-primary transition-colors text-[10px] font-headline uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-xs" data-icon="list_alt">list_alt</span> SYSTEM_LOG
+                </a>
+<a class="flex items-center gap-2 text-secondary/50 hover:text-primary transition-colors text-[10px] font-headline uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-xs" data-icon="contact_support">contact_support</span> SUPPORT
+                </a>
+</div>
+</div>
+</aside>
+<main class="flex-1 md:ml-64 bg-[#040f1d] min-h-screen relative overflow-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-40 bg-[#040f1d] shadow-[0px_0px_40px_rgba(255,139,157,0.05)] border-b-0">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-[1920px] mx-auto">
+<div class="text-2xl font-black text-[#e70057] tracking-tighter uppercase font-headline">NEON SYNDICATE</div>
+<div class="hidden lg:flex items-center gap-8">
+<a class="font-headline uppercase tracking-[0.1em] text-sm text-[#ff8b9d] border-b-2 border-[#e70057] pb-1" href="#">COMPONENTS</a>
+<a class="font-headline uppercase tracking-[0.1em] text-sm text-[#e2e7b0] opacity-70 hover:opacity-100 transition-opacity" href="#">SYSTEM</a>
+<a class="font-headline uppercase tracking-[0.1em] text-sm text-[#e2e7b0] opacity-70 hover:opacity-100 transition-opacity" href="#">ASSETS</a>
+<a class="font-headline uppercase tracking-[0.1em] text-sm text-[#e2e7b0] opacity-70 hover:opacity-100 transition-opacity" href="#">GUIDELINES</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary opacity-70 hover:text-primary cursor-pointer transition-colors" data-icon="settings">settings</span>
+<span class="material-symbols-outlined text-secondary opacity-70 hover:text-primary cursor-pointer transition-colors" data-icon="terminal">terminal</span>
+<button class="bg-primary-container text-on-primary-container px-4 py-1 font-headline font-bold text-xs tracking-widest active:scale-95 transition-transform uppercase">LOGIN</button>
+</div>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="p-8 lg:p-12 max-w-7xl mx-auto space-y-16">
+<!-- Hero Header -->
+<section class="space-y-4">
+<div class="flex items-center gap-3 mb-2">
+<div class="h-1 w-12 bg-secondary"></div>
+<span class="font-headline text-secondary text-xs font-bold tracking-[0.3em] uppercase">Module_04 // Input Systems</span>
+</div>
+<h2 class="text-6xl font-headline font-black text-on-surface tracking-tighter uppercase leading-none">Form_Controls</h2>
+<p class="text-on-surface-variant max-w-2xl text-lg font-light">
+                    Protocol-compliant data entry vectors. Built for tactical precision and high-latency tactical environments. No curves. No mercy.
+                </p>
+</section>
+<!-- Bento Grid Section: Inputs -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Text Inputs Master -->
+<div class="lg:col-span-8 bg-surface-container p-8 relative border-l-2 border-primary/20">
+<div class="absolute top-0 right-0 p-2 text-[10px] font-headline text-primary opacity-20 uppercase tracking-widest">INPUT_FIELD_STRESS_TEST</div>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="keyboard">keyboard</span> 01_TEXT_INPUTS
+                    </h3>
+<div class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Default -->
+<div class="space-y-2">
+<label class="block font-headline text-[10px] font-bold text-secondary tracking-widest uppercase">SYNDICATE_ID</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline/30 text-on-surface py-3 px-4 focus:ring-0 focus:border-primary transition-all placeholder:text-outline-variant font-mono text-sm" placeholder="Enter UID..." type="text"/>
+<div class="absolute inset-0 border border-primary/5 pointer-events-none group-hover:border-primary/20 transition-colors"></div>
+</div>
+<span class="block text-[10px] font-mono text-outline uppercase tracking-wider">// SYSTEM_DEFAULT</span>
+</div>
+<!-- Active/Hover Glow -->
+<div class="space-y-2">
+<label class="block font-headline text-[10px] font-bold text-primary tracking-widest uppercase">ENCRYPTION_KEY</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-primary text-on-surface py-3 px-4 focus:ring-0 shadow-[0_4px_20px_rgba(231,0,87,0.15)] font-mono text-sm" type="text" value="ALPHA-99-TX"/>
+<div class="absolute inset-0 border border-primary/30 pointer-events-none"></div>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary text-sm" data-icon="lock">lock</span>
+</div>
+<span class="block text-[10px] font-mono text-primary uppercase tracking-wider">// ACTIVE_GLOW_STATE</span>
+</div>
+<!-- Error State -->
+<div class="space-y-2">
+<label class="block font-headline text-[10px] font-bold text-error tracking-widest uppercase">NETWORK_GATEWAY</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-error text-error py-3 px-4 focus:ring-0 font-mono text-sm" type="text" value="INVALID_PROTOCOL"/>
+<div class="absolute inset-0 border border-error/20 pointer-events-none"></div>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-error text-sm" data-icon="warning">warning</span>
+</div>
+<span class="block text-[10px] font-mono text-error uppercase tracking-wider">// AUTH_FAILURE_403</span>
+</div>
+<!-- Disabled -->
+<div class="space-y-2 opacity-40">
+<label class="block font-headline text-[10px] font-bold text-secondary tracking-widest uppercase">RESTRICTED_ACCESS</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline/10 text-on-surface py-3 px-4 focus:ring-0 cursor-not-allowed font-mono text-sm" disabled="" placeholder="LOCKED_BY_ADMIN" type="text"/>
+</div>
+<span class="block text-[10px] font-mono text-outline uppercase tracking-wider">// READ_ONLY_VOICE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Select Dropdowns -->
+<div class="lg:col-span-4 bg-surface-container p-8 relative border-t-2 border-secondary/20">
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="list">list</span> 02_SELECT
+                    </h3>
+<div class="space-y-8">
+<div class="space-y-2">
+<label class="block font-headline text-[10px] font-bold text-secondary tracking-widest uppercase">MISSION_REGION</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline/30 text-on-surface py-3 px-4 focus:ring-0 focus:border-secondary appearance-none font-headline uppercase tracking-widest text-xs">
+<option>NEO_TOKYO_HUB</option>
+<option>ORBITAL_STATION_7</option>
+<option>VOID_SECTOR_EPSILON</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-secondary pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest border border-outline/10">
+<p class="font-mono text-[10px] text-outline leading-relaxed">
+<span class="text-secondary">// NOTE:</span> ALL SELECTION VECTORS ARE SUBJECT TO SYSTEM OVERRIDE BY EXECUTIVE PROTOCOLS. ENSURE REGION MATCHES CLEARANCE LEVEL.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Checks & Toggles Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Checkboxes & Radios -->
+<div class="bg-[#1b2d43] p-8 border-b-2 border-primary-dim">
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="rule">rule</span> 03_BINARY_SWITCH
+                    </h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+<!-- Checkboxes -->
+<div class="space-y-6">
+<p class="font-headline text-[10px] font-bold text-secondary-dim tracking-[0.2em] uppercase mb-4">Check_Multi</p>
+<label class="flex items-center gap-4 cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<input class="peer appearance-none w-5 h-5 border-2 border-primary-dim checked:bg-primary-dim transition-all" type="checkbox"/>
+<span class="material-symbols-outlined text-on-primary-fixed absolute scale-0 peer-checked:scale-100 transition-transform font-bold text-sm" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-headline text-xs uppercase tracking-widest text-on-surface group-hover:text-primary transition-colors">ENCRYPT_DATA_STREAM</span>
+</label>
+<label class="flex items-center gap-4 cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<input checked="" class="peer appearance-none w-5 h-5 border-2 border-primary-dim checked:bg-primary-dim transition-all" type="checkbox"/>
+<span class="material-symbols-outlined text-on-primary-fixed absolute scale-0 peer-checked:scale-100 transition-transform font-bold text-sm" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<span class="font-headline text-xs uppercase tracking-widest text-on-surface group-hover:text-primary transition-colors">ANONYMOUS_LOGGING</span>
+</label>
+</div>
+<!-- Radios -->
+<div class="space-y-6">
+<p class="font-headline text-[10px] font-bold text-secondary-dim tracking-[0.2em] uppercase mb-4">Radio_Solo</p>
+<label class="flex items-center gap-4 cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<input checked="" class="peer appearance-none w-5 h-5 border-2 border-secondary checked:bg-secondary transition-all" name="protocol" type="radio"/>
+<div class="w-2 h-2 bg-black absolute scale-0 peer-checked:scale-100 transition-transform"></div>
+</div>
+<span class="font-headline text-xs uppercase tracking-widest text-on-surface group-hover:text-secondary transition-colors">STEALTH_MODE</span>
+</label>
+<label class="flex items-center gap-4 cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<input class="peer appearance-none w-5 h-5 border-2 border-secondary checked:bg-secondary transition-all" name="protocol" type="radio"/>
+<div class="w-2 h-2 bg-black absolute scale-0 peer-checked:scale-100 transition-transform"></div>
+</div>
+<span class="font-headline text-xs uppercase tracking-widest text-on-surface group-hover:text-secondary transition-colors">OVERDRIVE_OS</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Toggles -->
+<div class="bg-surface-container-high p-8 relative border-r-2 border-secondary">
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="toggle_on">toggle_on</span> 04_STATE_TOGGLES
+                    </h3>
+<div class="space-y-8">
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline/5 hover:border-primary/30 transition-colors">
+<div class="space-y-1">
+<p class="font-headline text-xs font-bold uppercase tracking-widest text-on-surface">HEARTBEAT_SENSOR</p>
+<p class="font-mono text-[9px] text-outline uppercase tracking-wider">REALTIME_BIOMETRIC_FETCH</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-12 h-6 bg-surface-container-highest border border-outline/20 peer-checked:after:translate-x-full peer-checked:after:bg-primary after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-outline after:h-4 after:w-5 after:transition-all peer-checked:bg-primary/10 peer-checked:border-primary peer-checked:shadow-[0_0_15px_rgba(231,0,87,0.3)]"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest border border-outline/5 hover:border-primary/30 transition-colors">
+<div class="space-y-1">
+<p class="font-headline text-xs font-bold uppercase tracking-widest text-on-surface">GHOST_ROUTING</p>
+<p class="font-mono text-[9px] text-outline uppercase tracking-wider">MULTI_HOP_PROXY_LAYERING</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-12 h-6 bg-surface-container-highest border border-outline/20 peer-checked:after:translate-x-full peer-checked:after:bg-primary after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-outline after:h-4 after:w-5 after:transition-all peer-checked:bg-primary/10 peer-checked:border-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Asset Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-8 border-t border-outline/10">
+<div class="space-y-6">
+<h4 class="font-headline text-2xl font-black uppercase tracking-tighter text-primary">Tactical_Precision</h4>
+<p class="text-on-surface-variant font-light leading-relaxed">
+                        Every interaction in the Neon Syndicate design system is engineered for zero-latency tactile feedback. Our form controls utilize internal glows and sharp geometric boundaries to ensure clarity even in the most chaotic terminal overlays.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<span class="px-4 py-1 bg-primary/10 text-primary font-mono text-[10px] tracking-widest uppercase">#EE005A_ACCENT</span>
+<span class="px-4 py-1 bg-secondary/10 text-secondary font-mono text-[10px] tracking-widest uppercase">#FAFFC7_GLOW</span>
+<span class="px-4 py-1 bg-surface-bright text-outline font-mono text-[10px] tracking-widest uppercase">0PX_RADIUS_PROTOCOL</span>
+</div>
+</div>
+<div class="relative aspect-video overflow-hidden">
+<img class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700" data-alt="high-tech computer server room with neon pink and blue lighting lines running along technical equipment and cables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9Y18CUGJv23eIx2_KKbLOVxVvcpO6w8glLz2tz_bFVnJVOX13AVrnlvakXWBZguLVX_U1HDr3DNvOUZHDXQ5G7UuoWTMv504CBo7TZR6m6SkneL13y05R46zVwn8kVuuAabapLzKBlwt2Upj8j8rV0mKS93mDcacCilneS8XlQQ1_dx9znVv9sup0uRCIgCO2HAZHrLFr8FWv0VyRVSfPoMQ5nMS1aF62X9mabz_Z18mLeMDaq4KdHDgf_8mvmLO6ON-MaQR3YR4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 p-2 bg-primary text-black font-black font-headline text-[10px] tracking-[0.2em] uppercase">LIVE_FEED_01</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="mt-20 border-t border-[#ff8b9d]/10 bg-[#040f1d]">
+<div class="flex flex-col md:flex-row justify-between items-center px-10 py-10 gap-6">
+<div class="flex flex-col gap-2">
+<span class="text-[#ff8b9d] font-bold font-headline uppercase tracking-tighter text-lg">NEON SYNDICATE</span>
+<p class="font-mono text-[10px] tracking-widest uppercase text-[#e2e7b0]/50">©2024 NEON SYNDICATE // KINETIC EDGE SYSTEM</p>
+</div>
+<div class="flex gap-8">
+<a class="font-mono text-[10px] tracking-widest uppercase text-[#e2e7b0]/50 hover:text-[#ff8b9d] transition-colors hover:underline" href="#">LEGAL</a>
+<a class="font-mono text-[10px] tracking-widest uppercase text-[#e2e7b0]/50 hover:text-[#ff8b9d] transition-colors hover:underline" href="#">PROTOCOL</a>
+<a class="font-mono text-[10px] tracking-widest uppercase text-[#e2e7b0]/50 hover:text-[#ff8b9d] transition-colors hover:underline" href="#">SECURITY</a>
+</div>
+</div>
+</footer>
+</main>
+</body></html>
