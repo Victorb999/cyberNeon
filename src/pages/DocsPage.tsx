@@ -305,7 +305,7 @@ const DocsPage: React.FC = () => {
                             </button>
                         ))}
                         <a
-                            href={import.meta.env.DEV ? 'http://localhost:6006' : '/storybook'}
+                            href={import.meta.env.DEV ? 'http://localhost:6006' : '/storybook/'}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-full flex items-center gap-3 px-4 py-3 font-headline text-xs font-bold uppercase tracking-widest text-[#00FF41] hover:bg-[#00FF41]/10 transition-all duration-200 border-l border-[#00FF41]/30 mt-4 group"
@@ -321,7 +321,7 @@ const DocsPage: React.FC = () => {
                             variant="tertiary"
                             className="w-full text-[10px] border-[#00FF41]/30 text-[#00FF41] hover:bg-[#00FF41]/5 hover:border-[#00FF41]"
                             size="sm"
-                            onClick={() => window.open(import.meta.env.DEV ? 'http://localhost:6006' : '/storybook', '_blank')}
+                            onClick={() => window.open(import.meta.env.DEV ? 'http://localhost:6006' : '/storybook/', '_blank')}
                         >
                             OPEN_STORYBOOK
                         </Button>
