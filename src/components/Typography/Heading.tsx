@@ -12,11 +12,11 @@ const headingVariants = cva(
     {
         variants: {
             level: {
-                display: "text-7xl md:text-9xl font-black tracking-tighter",
-                h1: "text-6xl md:text-8xl font-black tracking-tighter",
-                h2: "text-4xl md:text-5xl font-bold tracking-tight",
-                h3: "text-2xl md:text-3xl font-bold tracking-normal",
-                h4: "text-xl font-bold tracking-wide",
+                display: "text-[64px] md:text-[96px] font-black tracking-tighter leading-[0.9]",
+                h1: "text-[32px] md:text-[48px] font-bold tracking-tight leading-tight",
+                h2: "text-[18px] md:text-[22px] font-bold tracking-normal leading-[1.2]",
+                h3: "text-lg md:text-xl font-bold tracking-normal",
+                h4: "text-base font-bold tracking-wide",
             },
             intent: {
                 default: "text-on-surface",

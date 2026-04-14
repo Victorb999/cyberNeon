@@ -12,11 +12,11 @@ const textVariants = cva(
     {
         variants: {
             variant: {
-                body: "font-body text-base leading-relaxed",
-                lead: "font-body text-lg md:text-xl leading-relaxed",
-                label: "font-headline text-[10px] font-bold uppercase tracking-[0.2em]",
-                mono: "font-mono text-xs tracking-widest uppercase",
-                caption: "font-body text-sm text-on-surface-variant",
+                body: "font-body text-[14px] md:text-[16px] leading-[1.5]",
+                lead: "font-body text-base md:text-lg leading-relaxed",
+                label: "font-headline text-[11px] font-medium uppercase tracking-[0.15em] leading-[1.4]",
+                mono: "font-mono text-[12px] tracking-widest uppercase leading-[1.5]",
+                caption: "font-body text-xs text-on-surface-variant",
             },
             intent: {
                 default: "text-on-surface",
@@ -34,7 +34,7 @@ const textVariants = cva(
 );
 
 export interface TextProps
-    extends React.HTMLAttributes<HTMLParagraphElement>,
+    extends React.HTMLAttributes<HTMLElement>,
     VariantProps<typeof textVariants> {
     as?: "p" | "span" | "div" | "label";
 }

@@ -9,25 +9,30 @@ function cn(...inputs: ClassValue[]) {
 }
 
 const buttonVariants = cva(
-    "inline-flex items-center justify-center whitespace-nowrap text-sm font-headline uppercase tracking-widest transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 active:translate-x-[2px] active:translate-y-[2px]",
+    "inline-flex items-center justify-center whitespace-nowrap text-sm font-headline uppercase font-bold tracking-[0.15em] transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none disabled:opacity-50 active:translate-x-[1px] active:translate-y-[1px]",
     {
         variants: {
             variant: {
-                primary: "bg-primary text-on-primary-fixed shadow-[0_0_15px_rgba(255,139,157,0.5)] hover:shadow-[0_0_25px_rgba(255,139,157,0.8)] hover:-translate-y-0.5 clip-path-button",
-                secondary: "bg-surface-container-highest text-secondary border-r-2 border-secondary hover:bg-secondary/10",
+                primary: "bg-primary text-on-primary-fixed shadow-[0_0_15px_rgba(255,139,157,0.3)] hover:shadow-[0_0_20px_rgba(255,139,157,0.5)]",
+                secondary: "bg-secondary text-black hover:bg-secondary/90 shadow-[0_0_15px_rgba(226,231,176,0.2)]",
+                tertiary: "bg-transparent border border-primary/30 text-primary hover:border-primary hover:bg-primary/5",
                 ghost: "text-on-surface hover:bg-surface-container-high hover:text-primary",
-                tertiary: "bg-transparent text-primary hover:bg-primary/5 clip-path-polygon relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:bg-primary",
             },
             size: {
-                sm: "h-8 px-3 text-[10px]",
-                md: "h-10 px-6",
-                lg: "h-12 px-8 text-base",
+                sm: "h-8 px-4 text-[10px]",
+                md: "h-11 px-8",
+                lg: "h-14 px-10 text-base",
                 icon: "h-10 w-10",
+            },
+            cutCorner: {
+                true: "clip-path-cyber",
+                false: "",
             },
         },
         defaultVariants: {
             variant: "primary",
             size: "md",
+            cutCorner: true,
         },
     }
 );
@@ -39,11 +44,11 @@ export interface ButtonProps
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, variant, size, asChild = false, ...props }, ref) => {
+    ({ className, variant, size, cutCorner, asChild = false, ...props }, ref) => {
         const Comp = asChild ? Slot : "button";
         return (
             <Comp
-                className={cn(buttonVariants({ variant, size, className }))}
+                className={cn(buttonVariants({ variant, size, cutCorner, className }))}
                 ref={ref}
                 {...props}
             />

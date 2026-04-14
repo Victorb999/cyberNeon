@@ -16,19 +16,23 @@
   --color-outline: #6b7688;
   --color-outline-variant: #3d4959;
 
-  --color-primary: #ff8b9d;
-  --color-on-primary: #630021;
-  --color-primary-dim: #e70057;
+  --color-primary: #e70057;
+  --color-on-primary: #ffffff;
+  --color-primary-dim: #ff8b9d;
   --color-on-primary-fixed: #000000;
 
   --color-secondary: #e2e7b0;
   --color-secondary-dim: #d4d9a3;
 
   --color-error: #ff716c;
+  --color-success: #00ff41;
+  --color-warning: #f1f509;
+  --color-info: #00ffff;
 
   --font-headline: "Space Grotesk", sans-serif;
   --font-body: "Manrope", sans-serif;
   --font-label: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", "Roboto Mono", monospace;
 
   --radius-none: 0px;
   --radius-sm: 0px;
@@ -59,11 +63,15 @@
   }
 
   .clip-path-card {
-    clip-path: polygon(0 0, 92% 0, 100% 8%, 100% 100%, 8% 100%, 0 92%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 96% 100%, 0 100%);
+  }
+
+  .clip-path-cyber {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 92% 100%, 0 100%);
   }
 
   .clip-path-button {
-    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 85% 100%, 0 100%);
   }
 
   .inner-glow {

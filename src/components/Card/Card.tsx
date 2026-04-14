@@ -1,3 +1,4 @@
+import { cva, type VariantProps } from "class-variance-authority";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import React from "react";
@@ -6,19 +7,57 @@ function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
-export const Card = React.forwardRef<
-    HTMLDivElement,
-    React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
-    <div
-        ref={ref}
-        className={cn(
-            "bg-surface-container border-l-2 border-primary/20 clip-path-card p-6 relative overflow-hidden",
-            className
-        )}
-        {...props}
-    />
-));
+const cardVariants = cva(
+    "p-6 relative transition-all",
+    {
+        variants: {
+            variant: {
+                default: "bg-surface-container border-outline-variant",
+                secondary: "bg-surface-container-lowest border-outline-variant/30",
+            },
+            borderTheme: {
+                primary: "[--border-accent:var(--color-primary)]",
+                secondary: "[--border-accent:var(--color-secondary)]",
+                success: "[--border-accent:var(--color-success)]",
+                error: "[--border-accent:var(--color-error)]",
+                info: "[--border-accent:var(--color-info)]",
+                warning: "[--border-accent:var(--color-warning)]",
+            },
+            borderDirection: {
+                none: "",
+                top: "border-t-2 border-t-[var(--border-accent)]",
+                bottom: "border-b-2 border-b-[var(--border-accent)]",
+                left: "border-l-2 border-l-[var(--border-accent)]",
+                right: "border-r-2 border-r-[var(--border-accent)]",
+                all: "border-2 border-[var(--border-accent)]",
+            },
+            curcorner: {
+                true: "clip-path-card overflow-hidden",
+                false: "",
+            },
+        },
+        defaultVariants: {
+            variant: "default",
+            borderTheme: "primary",
+            borderDirection: "left",
+            curcorner: true,
+        },
+    }
+);
+
+export interface CardProps
+    extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof cardVariants> { }
+
+export const Card = React.forwardRef<HTMLDivElement, CardProps>(
+    ({ className, variant, borderTheme, borderDirection, curcorner, ...props }, ref) => (
+        <div
+            ref={ref}
+            className={cn(cardVariants({ variant, borderTheme, borderDirection, curcorner, className }))}
+            {...props}
+        />
+    )
+);
 
 export const CardHeader = ({
     className,
@@ -61,7 +100,13 @@ export const CardFooter = ({
     className,
     ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
-    <div className={cn("flex items-center pt-4 mt-4 border-t border-outline-variant", className)} {...props} />
+    <div
+        className={cn(
+            "flex items-center pt-4 mt-4 border-t border-outline-variant",
+            className
+        )}
+        {...props}
+    />
 );
 
 Card.displayName = "Card";

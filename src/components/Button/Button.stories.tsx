@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
-import { LucideTerminal } from 'lucide-react';
-import React from 'react';
 
 const meta: Meta<typeof Button> = {
     title: 'Tactical/Button',
@@ -15,13 +13,27 @@ export const Primary: Story = {
     args: {
         variant: 'primary',
         children: 'Initiate Link',
+        cutCorner: true,
     },
 };
 
 export const Secondary: Story = {
     args: {
         variant: 'secondary',
-        children: 'System Diagnostics',
+        children: 'System Upgrade',
+        cutCorner: true,
+    },
+};
+
+export const Tertiary: Story = {
+    args: {
+        variant: 'tertiary',
+        children: (
+            <span className="flex items-center gap-2">
+                <span className="opacity-40">//</span> DOWNLOAD_SPEC
+            </span>
+        ),
+        cutCorner: false,
     },
 };
 
@@ -29,42 +41,33 @@ export const Ghost: Story = {
     args: {
         variant: 'ghost',
         children: 'Abort Trace',
+        cutCorner: false,
     },
 };
 
-export const Tertiary: Story = {
-    args: {
-        variant: 'tertiary',
-        children: 'Data Port 01',
-    },
-};
-
-export const WithIcon: Story = {
+export const Square: Story = {
     args: {
         variant: 'primary',
-        children: (
-            <span className="flex items-center gap-2">
-                <LucideTerminal size={16} />
-                Execute CLI
-            </span>
-        ),
+        children: 'Static Protocol',
+        cutCorner: false,
     },
 };
 
 export const AllVariants = () => (
     <div className="flex flex-col gap-8 p-8 bg-background items-start">
         <div className="flex gap-4 items-center">
-            <Button variant="primary" size="lg">Primary Large</Button>
-            <Button variant="primary">Primary Medium</Button>
-            <Button variant="primary" size="sm">Primary Small</Button>
+            <Button variant="primary" cutCorner={true}>Primary Cut</Button>
+            <Button variant="primary" cutCorner={false}>Primary Square</Button>
         </div>
         <div className="flex gap-4 items-center">
-            <Button variant="secondary" size="lg">Secondary Large</Button>
-            <Button variant="secondary">Secondary Medium</Button>
-            <Button variant="secondary" size="sm">Secondary Small</Button>
+            <Button variant="secondary" cutCorner={true}>Secondary Cut</Button>
+            <Button variant="secondary" cutCorner={false}>Secondary Square</Button>
         </div>
         <div className="flex gap-4 items-center">
-            <Button variant="tertiary">Tertiary Action</Button>
+            <Button variant="tertiary" cutCorner={true}>Tertiary Cut</Button>
+            <Button variant="tertiary" cutCorner={false}>Tertiary Square</Button>
+        </div>
+        <div className="flex gap-4 items-center">
             <Button variant="ghost">Ghost State</Button>
         </div>
     </div>

@@ -2,22 +2,67 @@ import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import React from "react";
 
+import { cva, type VariantProps } from "class-variance-authority";
+
 function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 
-export const Table = React.forwardRef<
-    HTMLTableElement,
-    React.HTMLAttributes<HTMLTableElement>
->(({ className, ...props }, ref) => (
-    <div className="relative w-full overflow-auto">
-        <table
-            ref={ref}
-            className={cn("w-full caption-bottom text-sm font-body", className)}
-            {...props}
-        />
-    </div>
-));
+const tableVariants = cva(
+    "relative w-full overflow-auto border transition-all",
+    {
+        variants: {
+            variant: {
+                default: "bg-surface-container border-outline-variant",
+                secondary: "bg-surface-container-lowest border-outline-variant/30",
+            },
+            borderTheme: {
+                primary: "[--border-accent:var(--color-primary)]",
+                secondary: "[--border-accent:var(--color-secondary)]",
+                success: "[--border-accent:var(--color-success)]",
+                error: "[--border-accent:var(--color-error)]",
+                info: "[--border-accent:var(--color-info)]",
+                warning: "[--border-accent:var(--color-warning)]",
+            },
+            borderDirection: {
+                top: "border-t-[3px] border-t-[var(--border-accent)]",
+                bottom: "border-b-[3px] border-b-[var(--border-accent)]",
+                left: "border-l-[3px] border-l-[var(--border-accent)]",
+                right: "border-r-[3px] border-r-[var(--border-accent)]",
+                all: "border-[1px] border-[var(--border-accent)]",
+                none: "border-none",
+            },
+            curcorner: {
+                true: "clip-path-card",
+                false: "",
+            },
+        },
+        defaultVariants: {
+            variant: "default",
+            borderDirection: "none",
+            borderTheme: "primary",
+            curcorner: false,
+        },
+    }
+);
+
+export interface TableProps
+    extends React.HTMLAttributes<HTMLTableElement>,
+    VariantProps<typeof tableVariants> {
+    containerClassName?: string;
+}
+
+export const Table = React.forwardRef<HTMLTableElement, TableProps>(
+    ({ className, containerClassName, variant, borderTheme, borderDirection, curcorner, ...props }, ref) => (
+        <div className={cn(tableVariants({ variant, borderTheme, borderDirection, curcorner, className: containerClassName }))}>
+            <table
+                ref={ref}
+                className={cn("w-full caption-bottom text-sm font-body", className)}
+                {...props}
+            />
+        </div>
+    )
+);
 
 export const TableHeader = React.forwardRef<
     HTMLTableSectionElement,
