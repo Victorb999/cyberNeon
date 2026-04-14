@@ -1,12 +1,3 @@
 {
-    "rewrites": [
-        {
-            "source": "/storybook/:path*",
-            "destination": "/storybook/:path*"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/index.html"
-        }
-    ]
+    "cleanUrls": true
 }
