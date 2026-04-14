@@ -296,17 +296,35 @@ const DocsPage: React.FC = () => {
                                 key={key}
                                 onClick={() => setActiveTab(key)}
                                 className={`w-full flex items-center gap-3 px-4 py-3 font-headline text-xs font-bold uppercase tracking-widest transition-all duration-200 ${activeTab === key
-                                        ? 'bg-primary text-black clip-path-cyber'
-                                        : 'text-on-surface/60 hover:text-on-surface hover:bg-surface-container-high'
+                                    ? 'bg-primary text-black clip-path-cyber'
+                                    : 'text-on-surface/60 hover:text-on-surface hover:bg-surface-container-high'
                                     }`}
                             >
                                 <span className="material-symbols-outlined text-sm">{sections[key].icon}</span>
                                 {sections[key].title}
                             </button>
                         ))}
+                        <a
+                            href={import.meta.env.DEV ? 'http://localhost:6006' : '/storybook'}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full flex items-center gap-3 px-4 py-3 font-headline text-xs font-bold uppercase tracking-widest text-[#00FF41] hover:bg-[#00FF41]/10 transition-all duration-200 border-l border-[#00FF41]/30 mt-4 group"
+                        >
+                            <span className="material-symbols-outlined text-sm group-hover:rotate-12 transition-transform">auto_stories</span>
+                            STORYBOOK
+                            <span className="material-symbols-outlined text-[10px] ml-auto">open_in_new</span>
+                        </a>
                     </nav>
 
-                    <div className="px-4 mt-auto">
+                    <div className="px-4 mt-auto space-y-4">
+                        <Button
+                            variant="tertiary"
+                            className="w-full text-[10px] border-[#00FF41]/30 text-[#00FF41] hover:bg-[#00FF41]/5 hover:border-[#00FF41]"
+                            size="sm"
+                            onClick={() => window.open(import.meta.env.DEV ? 'http://localhost:6006' : '/storybook', '_blank')}
+                        >
+                            OPEN_STORYBOOK
+                        </Button>
                         <Button variant="secondary" className="w-full text-[10px]" size="sm">INIT_SYSTEM_DUMP</Button>
                     </div>
                 </div>
