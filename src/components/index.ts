@@ -10,3 +10,4 @@ export * from "./RadioGroup";
 export * from "./Card";
 export * from "./Tooltip";
 export * from "./Table";
+export * from "./List";

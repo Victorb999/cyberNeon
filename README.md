@@ -1,73 +1,117 @@
-# React + TypeScript + Vite
+# ⚡ CyberNeon UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=flat-square&logo=storybook&logoColor=white)](https://storybook.js.org/)
+[![React](https://img.shields.io/badge/-React_19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/-Tailwind_v4-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-Currently, two official plugins are available:
+> **Sharp Edges. Tonal Surfaces. Neon Accents.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+CyberNeon is a premium React UI library built for those who reject the softness of modern web design. It embraces a **Neon Brutalist** aesthetic—combining the raw, high-contrast energy of brutalist architecture with the vibrant, glowing aesthetics of cyberpunk.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎨 Design Philosophy
 
-## Expanding the ESLint configuration
+CyberNeon strictly adheres to a set of visual laws to maintain its unique identity:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-   **Zero Rounding**: Everything is `border-radius: 0px`. No exceptions. Hard edges only.
+-   **Tonal Logic**: Surfaces use a sophisticated hierarchy of dark tones to create depth without relying on shadows.
+-   **Neon Feedback**: Interactive states are highlighted with vibrant neon accents (Cyan, Magenta, Yellow, Lime).
+-   **Glow & Punch**: Subtle text-shadows and high-contrast borders ensure every element pops against dark backgrounds.
+-   **Angled Precision**: Optional "cut" corners and geometric shapes reinforce the industrial, high-tech feel.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+-   **Framework**: [React 19](https://react.dev/)
+-   **Build Tool**: [Vite 6](https://vitejs.dev/)
+-   **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+-   **Primitives**: [Radix UI](https://www.radix-ui.com/)
+-   **Icons**: [Lucide React](https://lucide.dev/)
+-   **Documentation**: [Storybook 8](https://storybook.js.org/)
+
+---
+
+## 🚀 Quick Start
+
+### Installation
+
+```bash
+npm install cyberneon
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Import Styles**: Add the CyberNeon CSS to your main entry point (e.g., `main.tsx` or `App.tsx`).
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```tsx
+import 'cyberneon/style.css';
 ```
+
+2. **Start Building**:
+
+```tsx
+import { Button, Card, Typography } from 'cyberneon';
+
+function App() {
+  return (
+    <Card variant="tonal">
+      <Typography variant="h1" neon="cyan">System Online</Typography>
+      <Button variant="primary" size="lg">
+        Execute Protocol
+      </Button>
+    </Card>
+  );
+}
+```
+
+---
+
+## 📦 Components
+
+Our library is expanding rapidly. Currently available:
+
+| Category | Components |
+| :--- | :--- |
+| **Actions** | `Button`, `Select`, `Switch` |
+| **Data Entry** | `Input`, `Checkbox`, `RadioGroup` |
+| **Data Display** | `Table`, `List`, `ListItem`, `Tooltip`, `StatusTag` |
+| **Layout** | `Card`, `Decorative` |
+| **Foundation** | `Typography` |
+
+---
+
+## 🏗️ Local Development
+
+Clone the repository and get the development environment running:
+
+1. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Run Dev Server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Launch Storybook**:
+   ```bash
+   npm run storybook
+   ```
+
+---
+
+## 🔮 Roadmap
+
+- [ ] Breadcrumbs & Navigation patterns
+- [ ] Dialog/Modal System (Brutalist style)
+- [ ] Advanced Data Grid
+- [ ] Animation system for neon transitions
+
+---
+
+## 📄 License
+
+MIT © 2026 CyberNeon Team
