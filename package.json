@@ -21,6 +21,7 @@
     "build": "tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "build:docs": "tsc && vite build -c vite.config.app.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
