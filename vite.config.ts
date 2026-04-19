@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    dts({ include: ['src'] })
+    dts({ tsconfigPath: './tsconfig.app.json', insertTypesEntry: true })
   ],
   build: {
     lib: {
